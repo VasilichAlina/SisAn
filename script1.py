@@ -4,34 +4,47 @@
 #
 # left = float(input("Введите левую границу: "))
 # right = float(input("Введите правую границу: "))
-# eps = float(input("Введите точность: "))
 #
+# E = float(input("Введите E: "))
+# L = float(input("Введите L: "))
+#
+# # Функция
 # def f(x):
+#     global function_calls
+#     function_calls += 1
 #     return a * x**2 + b * x + c
 #
-# k = 0
 #
-# while right - left > eps:
-#     y = (left + right - eps) / 2
-#     z = (left + right + eps) / 2
+# function_calls = 0
+# iterations = 0
 #
-#     if f(y) < f(z):
+# # Метод дихотомии
+# while right - left > L:
+#
+#     y = (left + right - E) / 2
+#     z = (left + right + E) / 2
+#
+#     fy = f(y)
+#     fz = f(z)
+#
+#     if fy < fz:
 #         right = z
 #     else:
 #         left = y
 #
-#     k += 1
+#     iterations += 1
 #
-#     print("Итерация", k,
-#           "  [", left, ";", right, "]",
-#           "  x =", (left + right) / 2)
 #
 # x_min = (left + right) / 2
+# f_min = f(x_min)
 #
-# print("\nРезультат:")
+# print()
+# print("Результат:")
 # print("Точка минимума:", x_min)
-# print("Значение функции:", f(x_min))
-###################################################################
+# print("Минимальное значение:", f_min)
+# print("Количество итераций:", iterations)
+# print("Количество вычислений функции:", function_calls)
+########################zolotoe sechenie###########################################
 # import math
 #
 # a = float(input("Введите коэффициент a: "))
